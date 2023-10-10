@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.listTitle %> Tasks List</title>
+</head>
+<body>
+    <div class="main">
+        <% if (locals.listTitle) {%>
+        <h1><%= locals.listTitle %></h1>
+        <% } %>
+        <div class="mainForm">
+            <% if (locals.toDo) {%>
+                <% toDo.forEach ((items) => { %>
+                 <form action="/delete" method="POST">
+                    <div class="checkBox">
+                        <input  type="checkbox" name="checkbox" value="<%= items._id %>" onChange="this.form.submit()"></input>
+                        <span><%= items.name %></span><br>
+                    </div>
+                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+                </form>
+            <% }); %>
+            <% } %>
+        <form action="/" method="POST">
+            <input type="text" name="task" placeholder="Enter Task">
+            <button type="submit" name="List" value="<%= listTitle %>">+</button>
+        </form>
+    </div>
+        <%- include("partials/footer.ejs") %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Tasks List</title>
+</head>
+<body>
+    <div class="main">
+    <h1>Work</h1>
+    <form action="/work" method="POST">
+        <% if (locals.toDo2) {%>
+            <%for (let i = 0; i<toDo2.length; i++) {%>
+            <div class="checkBox"><input  type="checkbox"></input><span><%= toDo2[i] %></span><br></div>
+        <% } %>
+        <% } %>
+        <input type="text" name="task" placeholder="Enter Task">
+        <input type="submit" value="+" class = "button">
+    </form>
+    <%- include("partials/footer.ejs") %>
+    </div>
+</body>
+</html>

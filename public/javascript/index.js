@@ -1,0 +1,9 @@
+$(function(){
+    $('input:checkbox').on('change',function(){
+        if($(this).is(':checked')){
+            $(this).siblings('span').addClass("deleteText");
+        }else{
+            $(this).siblings('span').removeClass("deleteText");
+        }
+    });
+});

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="javascript/index.js" charset="UTF-8"></script>
+    <nav>
+        <a href="/">Day</a>
+        <% toDoLists.forEach((list) => { %>
+        <a href="/<%= list.name %>"><%= list.name %></a>
+        <% }); %>
+    </nav>
+</body>
+</html>

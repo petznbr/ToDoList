@@ -69,10 +69,12 @@ app.get("/", (req, res) => {
 myitems();
 });
 
+app.get("/favicon.ico", function(req, res){
+});
+
 app.get("/:customListName", function(req, res){
   const customListName = _.capitalize(req.params.customListName);
 
-  if (customListName != "Favicon.ico") {
   async function myList() {
     try {
       const lists = await List.findOne({name: customListName});
@@ -93,7 +95,6 @@ app.get("/:customListName", function(req, res){
     }
 }
 myList();
-  }
 });
 
 app.post("/", (req, res) => {

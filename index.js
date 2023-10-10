@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import _ from 'lodash';
 
 const app = Express();
-const port = 3000;
+const port = process.env.PORT || 3030;
 const dayTasks = [];
 const workTasks = [];
 

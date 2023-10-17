@@ -5,8 +5,6 @@ import _ from 'lodash';
 
 const app = Express();
 const port = process.env.PORT || 3030;
-const dayTasks = [];
-const workTasks = [];
 
 app.use(Express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -154,12 +152,6 @@ app.post("/delete", (req, res) => {
 deleteItems();
 res.redirect("/"+listName);
   }
-          // Item.findOneAndDelete({ _id: checkedItemId }).then(function() {
-          //   console.log("Removed successfully!");
-          //   res.redirect("/");
-          // }).catch(function(err) {
-          //   console.log(err);
-          // });
 });
   
 app.listen(port, () => {
